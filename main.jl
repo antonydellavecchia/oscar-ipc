@@ -1,3 +1,4 @@
+import Distributed.start_worker
 using Distributed
 
 using Oscar
@@ -14,6 +15,11 @@ using Oscar
 #end
 #
 
+io = open("/home/antony/test-file.json", "w")
+wc = WorkerConfig()
+wc.io = io
+a = Distributed.manage(Distributed.LocalManager(2, false), 1, wc, :a)
+    
 addprocs(4)
 
 @everywhere begin
@@ -31,16 +37,16 @@ const results = Distributed.RemoteChannel(() -> Channel{Tuple}(32));
 @everywhere function do_work(jobs, results) # define work function everywhere
     for i in 1:10
         job_id = take!(jobs)
+        
         exec_time = rand()
-        print(exec_time) # simulates elapsed time doing actual work
+        (exec_time) # simulates elapsed time doing actual work
         put!(results, (job_id, exec_time, myid()))
     end
 end
 
 function make_jobs(n)
-    io = IOStream("test")
     for i in 1:n
-        put!(jobs, io)
+        put!(jobs, i)
     end
 end;
 

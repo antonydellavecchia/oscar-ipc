@@ -163,9 +163,9 @@ version = "0.4.0"
 
 [[Hecke]]
 deps = ["AbstractAlgebra", "Dates", "Distributed", "InteractiveUtils", "LazyArtifacts", "Libdl", "LinearAlgebra", "Markdown", "Nemo", "Pkg", "Printf", "Profile", "Random", "RandomExtensions", "Requires", "Serialization", "SparseArrays", "Test"]
-git-tree-sha1 = "8fbff9ec90478bb3ba43703b77657f085ab6a5fd"
+git-tree-sha1 = "104cc9d3335225ffc4287345a0ce8035245fb13a"
 uuid = "3e1990a7-5d81-5526-99ce-9ba3ff248f21"
-version = "0.18.2"
+version = "0.18.3"
 
 [[InteractiveUtils]]
 deps = ["Markdown"]
@@ -236,7 +236,7 @@ uuid = "29816b5a-b9ab-546f-933c-edad1886dfa8"
 uuid = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
 
 [[LinearAlgebra]]
-deps = ["Libdl"]
+deps = ["Libdl", "libblastrampoline_jll"]
 uuid = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 
 [[LogExpFunctions]]
@@ -304,9 +304,9 @@ version = "6.2.0+0"
 
 [[Nemo]]
 deps = ["AbstractAlgebra", "Antic_jll", "Arb_jll", "Calcium_jll", "FLINT_jll", "InteractiveUtils", "Libdl", "LinearAlgebra", "Markdown", "Pkg", "Random", "RandomExtensions", "SHA", "Test"]
-git-tree-sha1 = "f5ddc05af34be2ff567d0cefe2f6bda0119287e4"
+git-tree-sha1 = "36b94d506d72e9c6076b691c56895fdfbfd5ac9e"
 uuid = "2edaba10-b0f1-5616-af89-8c11ac63239a"
-version = "0.33.1"
+version = "0.33.2"
 
 [[NetworkOptions]]
 uuid = "ca575930-c2e3-43a9-ace4-1e988b2c1908"
@@ -319,9 +319,13 @@ version = "1.11.1+0"
 
 [[OpenBLAS32_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "ba4a8f683303c9082e84afba96f25af3c7fb2436"
+git-tree-sha1 = "9c6c2ed4b7acd2137b878eb96c68e63b76199d0f"
 uuid = "656ef2d0-ae68-5445-9ca0-591084a874a2"
-version = "0.3.12+1"
+version = "0.3.17+0"
+
+[[OpenBLAS_jll]]
+deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl"]
+uuid = "4536629a-c528-5b80-bd46-f80d51c5b363"
 
 [[OpenLibm_jll]]
 deps = ["Artifacts", "Libdl"]
@@ -341,7 +345,7 @@ version = "0.5.5+0"
 
 [[Oscar]]
 deps = ["AbstractAlgebra", "AlgebraicSolving", "DocStringExtensions", "GAP", "Hecke", "JSON", "Markdown", "Nemo", "Pkg", "Polymake", "Preferences", "Random", "RandomExtensions", "RecipesBase", "Singular", "TOPCOM_jll", "Test", "UUIDs", "cohomCalg_jll"]
-path = "/homes/combi/vecchia/local/repositories/Oscar.jl/"
+path = "/home/antony/projects/Oscar/"
 uuid = "f1435218-dba5-11e9-1e4d-f1a5fab5fc13"
 version = "0.12.0-DEV"
 
@@ -392,7 +396,7 @@ deps = ["InteractiveUtils", "Markdown", "Sockets", "Unicode"]
 uuid = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"
 
 [[Random]]
-deps = ["Serialization"]
+deps = ["SHA", "Serialization"]
 uuid = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 
 [[RandomExtensions]]
@@ -536,6 +540,10 @@ deps = ["Artifacts", "GLPK_jll", "GMP_jll", "JLLWrappers", "Libdl", "Pkg"]
 git-tree-sha1 = "79116185def638e73ea3d88ca6c10e210a1dc183"
 uuid = "1493ae25-0f90-5c0e-a06c-8c5077d6d66f"
 version = "1.6.10+0"
+
+[[libblastrampoline_jll]]
+deps = ["Artifacts", "Libdl", "OpenBLAS_jll"]
+uuid = "8e850b90-86db-534c-a0d3-1478176c7d93"
 
 [[libcxxwrap_julia_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
